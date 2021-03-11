@@ -1,0 +1,216 @@
+multilevel inheritence
+class Phone:
+    category = "Electronics"
+
+    def __init__(self):
+        print("Phone is used for talking from a home or within a building")
+    def price(self):
+        print("price of normal phone is $200")
+    def function(self):
+        print("phone is good source of communication")
+
+class CellPhone(Phone):
+    category = "Wireless device"
+
+    def __init__(self):
+        super().__init__()
+        print("Phone is used for talking anywhere while moving")
+    def price(self):
+        super().price()
+        print("price of normal phone is $500")
+    def feature(self):
+        super().function()
+        print("wireless talking and mobility is a great feature of cell phone")
+
+    
+class SmartPhone(CellPhone):
+    #category = "Wireless Multifunction Device"
+    def __init__(self):
+        print(super().category)
+        print("SmartPhone is used for talking and video call anywhere while moving")
+    # def price(self):
+    #     print("price of normal phone is $10500000000000")
+
+    def specialfeature(self):
+        print("Video call and video conference is a special feature of smart phone")
+
+
+p = Phone()
+
+cp = CellPhone()
+
+sp = SmartPhone()
+
+cp.price()
+cp.feature()
+
+# cp.function()
+# print(cp.category)
+
+# sp.function()
+# cp.feature()
+
+
+"""
+Multiple inheritence
+class Employee:
+    company = "Amazon"
+
+    def __init__(self):
+        print("I am from Employee class Constructor")
+    def empInfo(self):
+        print("This employee is highly skilled in IT")
+    def jobInfo(self):
+        print("This employee works in Amazon")
+
+class Consultant:
+    company = "kk Development.INc"
+
+    def __init__(self):
+        print ("I am from consultant class constructor")
+
+    def consultInfo(self):
+        print("This person works as a self employed consultant")
+
+    def salaryInfo(self):
+        print("This guy charges $200 per hour for professional services")
+
+    def jobInfo(self):
+        print("This employee works as python developer in web Application")
+
+    
+#class Programmer(Employee,Consultant):
+class Programmer(Consultant,Employee):
+    company = "Free lancer & facebook"
+
+    def __init__(self):
+        print("i am from programmer class constructor")
+
+    def progrInfo(self):
+        print("this guy is full stack developer")
+
+    def salaryInfo(self):
+        print("This guy charges $200 per hour for professional servicesand 100 k yearly")
+
+    def jobInfo(self):
+        print("This employee works as python developer and react developer ")
+
+
+prog = Programmer()
+
+
+prog.jobInfo()
+
+prog.empInfo()
+
+print(prog.company)
+prog.consultInfo()
+
+
+
+
+Basic Inheritence
+# class Person:
+#     status = "Employed"
+#     educatuion = "master"
+
+#     def __init__(self):
+#         print("I am constructor from person class1")
+    
+#     def perInfo(self):
+#         print("This person lives in Toronto")
+    
+#     def job_Title(self):
+#         print("This person is workong as financial Analyst")
+    
+# class Doctor(Person):
+
+#       status = "Volunteer"
+
+#       def __init__(self):
+#           print("I am constructor from Doctor Class")
+
+#       def drInfo(self):
+#           print("This doctor is living in Milton")
+      
+#       def job_Title(self):
+#           print("This person is working as a doctor")
+
+# per = Person()
+
+# dr = Doctor()
+
+# dr.perInfo()
+
+# dr.job_Title()
+
+# print(dr.status)
+
+# print(dr.educatuion)
+
+# per.job_Title()
+
+
+class Phone():
+     brand = "Nokia 1100 "
+     system ="window"
+     def __init__(self):
+        print("In this class we discuss about old generation phones")
+    
+     def deviceInfo(self):
+        print("Majorly used for calling. Also have feature like calculator, calendor etc.")
+    
+     def nokiaLaunch(self):
+        print("Launched in 20s")
+
+class SmartPhone(Phone):
+     brand = "Iphone 12 pro "
+     system ="ios"
+     def __init__(self):
+        print("In this class we discuss about new generation phones")
+    
+     def deviceInfo(self):
+        print("Use for calling, video chat, browse thimgs on internet etc.")
+    
+     def iphonelaunch(self):
+        print("2020")
+
+ph = Phone()
+SmPh = SmartPhone()
+
+SmPh.nokiaLaunch()
+
+
+Class Variable
+class Student:
+    college_name = "Cestar College"
+
+    def __init__(self, name):
+        self.id = 12
+        self.name = name
+
+    def printName(self):
+        print(f"Student enrolled with name = {self.name}")
+
+    @classmethod
+    def printCollegeName(cls):
+        print(f"College name is :{cls.college_name}")
+
+Student.college_name = "Lambton College"
+
+std1 = Student("Raj")
+std2 = Student("Raman")
+std3 = Student("Karan")
+
+std1.college_name = "Conestoga college"
+
+std1.printCollegeName()
+print(Student.college_name)  
+
+def empInfo(name,city)
+     print(f"Name of the emp;oyee :{name} \n city of the employee{city}")
+
+  empInfo (name = "James Snow", city = "milton")
+
+  empInfo ( city = "milton", name = "James Snow")
+
